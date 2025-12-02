@@ -1,0 +1,19 @@
+yaml
+stages:
+  - deploy
+
+deploy_to_server:
+  stage: deploy
+  script:
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+    - chmod 600 ~/.ssh/id_ed25519
+
+    - ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "
+        cd /var/www/myapp &&
+        git pull &&
+        npm install --production &&
+        pm2 restart all
+      "
+  only:
+    - main
