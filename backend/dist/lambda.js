@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.handler = void 0;
 const core_1 = require("@nestjs/core");
 const app_module_1 = require("./app.module");
-const serverless_http_1 = require("serverless-http");
+const serverless = require('serverless-http');
 let cachedServer;
 async function bootstrap() {
     if (!cachedServer) {
@@ -15,7 +15,7 @@ async function bootstrap() {
         });
         await app.init();
         const expressApp = app.getHttpAdapter().getInstance();
-        cachedServer = (0, serverless_http_1.default)(expressApp);
+        cachedServer = serverless(expressApp);
     }
     return cachedServer;
 }

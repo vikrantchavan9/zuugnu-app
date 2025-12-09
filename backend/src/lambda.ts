@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import serverless from 'serverless-http';
+const serverless = require('serverless-http');
 
 let cachedServer: any;
 
