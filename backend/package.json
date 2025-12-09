@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dist/main.js",
     "start:dev": "ts-node src/main.ts",
-    "build": "nest build",
+    "build": "npx nest build",
     "build:netlify": "bash build-netlify.sh"
   },
   "keywords": [],
