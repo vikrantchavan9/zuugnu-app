@@ -1,8 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  reactCompiler: true,
+  // output: 'export',
+  trailingSlash: true,
+
+  // If you are using the <Image> component, you might also need this:
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;

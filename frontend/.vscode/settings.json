@@ -1,0 +1,16 @@
+{
+	"files.exclude": {
+	},
+	"search.exclude": {
+	},
+	"files.watcherExclude": {
+	},
+	"typescript.tsserver.excludePaths": [
+		"out",
+		".next",
+		"node_modules"
+	],
+	"files.associations": {
+		"**/out/**/*.html": "html"
+	}
+}
