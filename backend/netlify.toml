@@ -1,8 +1,8 @@
 [build]
   base = "backend"
-  command = "npm run build"
+  command = "npm run build && npm run build:netlify"
   publish = "dist"
-  functions = "dist"
+  functions = "netlify/functions"
 
 [[redirects]]
   from = "/*"

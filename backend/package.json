@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node src/main.ts",
-    "build": "nest build"
+    "build": "nest build",
+    "build:netlify": "bash build-netlify.sh"
   },
   "keywords": [],
   "author": "",
