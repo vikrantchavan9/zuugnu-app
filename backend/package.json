@@ -2,10 +2,11 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node src/main.ts",
+    "start": "node dist/main.js",
+    "start:dev": "ts-node src/main.ts",
     "build": "nest build",
     "build:netlify": "bash build-netlify.sh"
   },
@@ -14,7 +15,6 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "@nestjs/cli": "^11.0.0",
     "@types/bcrypt": "^6.0.0",
     "@types/node": "^24.10.1",
     "@types/passport-jwt": "^4.0.1",
@@ -23,6 +23,7 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "@nestjs/cli": "^11.0.0",
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.1.9",
     "@nestjs/jwt": "^11.0.1",
