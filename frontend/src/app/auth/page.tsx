@@ -166,7 +166,12 @@ export default function AuthPage() {
 
     try {
       const fullPhone = `${countryCode}${whatsappNumber}`;
-      const response = await fetch("/auth/login", {
+
+      // Use environment variable for backend URL in production
+      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || '';
+      const apiUrl = backendUrl ? `${backendUrl}/auth/login` : '/auth/login';
+
+      const response = await fetch(apiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
